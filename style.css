@@ -73,64 +73,60 @@ section {
     border-radius: var(--card-default-radius);
     background-color: #e9e9e9;
 
-    &#quiere h2::after {
-        content: '';
-        width: 100px;
-        height: 100px;
-        border-radius: 100%;
-        position: absolute;
-        background-color: #e9e9e9;
-        transform: translate(30%, -30px);
+    position: relative;
+
+    & div.content {
+        width: 100%; height: 100%;
+        
+        display: flex;
+        flex-direction: row;
     }
 
-    &#queEs h2::after {
-        content: '';
-        width: 100px;
-        height: 100px;
+    & .circle {
+        width: 100px; height: 100px;
         border-radius: 100%;
-        position: absolute;
+
         background-color: #e9e9e9;
-        transform: translate(270px, 15px);
+        
+        position: absolute;
+        left: calc(50% - 50px);
     }
     
     &.no-sub-subtitle {
-        & h2 {
-            width: 50%;
-            font-size: 38px;
-            text-decoration: underline;
+
+        & .content {
+            display: flex;
+            justify-content: center; align-items: center;
+            & h2 {
+                width: 50%;
+                font-size: 38px;
+                text-decoration: underline;
+            }
         }
     }
 
     &.with-sub-subtitle {
 
-        & div {
-            width: 45%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .content{
 
-            & h2 {
-                width: 50%;
-                font-size: 38px;
-                text-decoration: underline;
-        
-                &::after {
-                    content: '';
-                    width: 100px;
-                    height: 100px;
-                    border-radius: 100%;
-                    position: absolute;
-                    background-color: #e9e9e9;
-                    transform: translate(30%, -30px);
+            & div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                & h2 {
+                    width: 50%;
+                    font-size: 38px;
+                    text-decoration: underline;
                 }
-            }
 
-            & h3 {
-                font-size: 18px;
-                color: #555;
-                text-align: justify;
-                margin: 0 100px;
+                & h3 {
+                    font-size: 18px;
+                    color: #555;
+                    text-align: justify;
+                    margin: 0 100px;
+                }
             }
         }
         
