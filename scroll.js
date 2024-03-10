@@ -1,16 +1,17 @@
-$(document).ready(function(){
-    $("html").easeScroll({
-        frameRate: 60,
-        animationTime: 1000,
-        stepSize: 120,
-        pulseAlgorithm: 1,
-        pulseScale: 8,
-        pulseNormalize: 1,
-        accelerationDelta: 20,
-        accelerationMax: 1,
-        keyboardSupport: true,
-        arrowScroll: 50,
-        touchpadSupport: true,
-        fixedBackground: true
-    });
+const main = document.querySelector("main");
+const mainOffset = main.offsetTop;
+
+const arrow = document.getElementById("goTo");
+
+windows.onscroll = function() {
+    if (window.scrollY < mainOffset) {
+        arrow.classList.add("")
+    }
+}
+
+$('#top').click(function() {            // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                   // Scroll to top of body
+    }, 500);
 });
+
