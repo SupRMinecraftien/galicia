@@ -1,17 +1,28 @@
-const main = document.querySelector("main");
-const mainOffset = main.offsetTop;
+const scroller = document.getElementById('scroller');
 
-const arrow = document.getElementById("goTo");
 
-windows.onscroll = function() {
-    if (window.scrollY < mainOffset) {
-        arrow.classList.add("")
-    }
+
+window.onscroll = () => {
+  rotate(scroller);
 }
 
-$('#top').click(function() {            // When arrow is clicked
-    $('body,html').animate({
-        scrollTop : 0                   // Scroll to top of body
-    }, 500);
-});
+window.onload = () => {
+  rotate(scroller);
+}
+
+scroller.onclick = () => {
+  if (window.scrollY > window.innerHeight / 2) {
+    window.scrollTo(0, 0);
+  } else {
+    window.scrollTo(0, window.innerHeight);
+  }
+}
+
+function rotate(object) {
+  if (window.scrollY > window.innerHeight / 2) {
+    object.style.rotate = '0deg';
+  } else {
+    object.style.rotate = '180deg';
+  }
+}
 
